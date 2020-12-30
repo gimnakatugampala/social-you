@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/darkly/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>SocialYou | Gimna Katugampala Production</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+</head>
+<body>
+    <script src="main.js"></script>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary navigation" id="navigation">
+        <h1>SocialYou</h1>
+        <button type="button" class="btn btn-danger" id="logout">Logout</button>
+    </nav>
+
+    <div class="container mt-5" id="alert"></div>
+
+    <!--Login Button-->
+    <div class="login">
+    <div class="fb-login-button" data-width="" data-size="large" data-button-type="login_with" data-layout="rounded" data-auto-logout-link="false" data-use-continue-as="true" scope="public_profile,email,user_link,user_gender,user_posts,user_status,user_videos,
+    user_photos,user_location,user_hometown,user_birthday" onlogin="checkLoginState();" id="fb-btn"></div>  
+    <h4>LogIn To See Your Profile!</h4>
+    </div>
+
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-4" id="profile"></div>
+
+            <div class="col-md-8" id="feed">
+              
+            </div>
+            </div>
+    
+    
+    <!-- Load the JS SDK asynchronously -->
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+</body>
+</html>

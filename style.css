@@ -1,0 +1,31 @@
+.navigation {
+  display: flex;
+  justify-content: space-between;
+}
+
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.fb-login-button {
+  position: absolute;
+  top: 100px;
+}
+
+.fb-login-button:active {
+  transform: scale(0.98);
+}
+
+.fb-login-button:focus {
+  outline: none;
+}
+
+#logout,
+#feed,
+#profile {
+  display: none;
+}
