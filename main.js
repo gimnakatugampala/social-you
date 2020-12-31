@@ -54,9 +54,9 @@ function statusChangeCallback(response){
   function setElements(isLoggedIn){
     if(isLoggedIn){
         document.querySelector('.login').style.display = 'none';
-        document.getElementById('profile').style.display = 'flex';
-        document.getElementById('feed').style.display = 'flex';
-        document.getElementById('logout').style.display = 'flex';
+        document.getElementById('profile').style.display = 'block';
+        document.getElementById('feed').style.display = 'block';
+        document.getElementById('logout').style.display = 'block';
     }else{
         document.querySelector('.login').style.display = 'flex';
         document.getElementById('profile').style.display = 'none';
