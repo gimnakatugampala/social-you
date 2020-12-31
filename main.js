@@ -86,7 +86,7 @@ function statusChangeCallback(response){
 
   //DOM Feed
   function buildFeed(feed){
-      let data  = data == undefined ? 'n/a' :feed.posts.data;
+      let data  = data == undefined ? '' :feed.posts.data;
       let posts = '<h2 class="text-center">Your Feed</h2>';
       if(data === undefined || data === '' || data === null){
         posts += '<h2>Content Not Available</h2>';
