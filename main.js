@@ -1,5 +1,3 @@
-let users = [];
-let data = [];
 
 //JS SDK
 window.fbAsyncInit = function() {
@@ -45,7 +43,7 @@ function statusChangeCallback(response){
         console.log(response)
             buildProfile(response);
             buildFeed(response);
-            showAlert(`Welcome ${!response.name ? 'User': response.name} !`)
+            showAlert(`Welcome ${!response.name || '' ? 'User': response.name} !`)
       }
     })
   }
@@ -90,16 +88,23 @@ function statusChangeCallback(response){
   function buildFeed(feed){
       const data = feed.posts.data;
       let posts = '<h2 class="text-center">Your Feed</h2>';
-      data.forEach(dat =>{
-        posts += `
-        <div class="card mb-3">
-                   <div class="card-header"><h4>${!dat.message ? 'Content not available😌' : dat.message}</h4></div>
-                   <small class="bg-primary p-2">${new Date(dat.created_time)}</small>
-               </div>
-    `;
-      })
+      if(data == 'undefined'){
+        document.getElementById('feed').innerHTML = '<h2>Content Not Available</h2>';
+      }else{
 
-      document.getElementById('feed').innerHTML = posts;
+        data.forEach(dat =>{
+          posts += `
+          <div class="card mb-3">
+                     <div class="card-header"><h4>${!dat.message ? 'Content not available😌' : dat.message}</h4></div>
+                     <small class="bg-primary p-2">${new Date(dat.created_time)}</small>
+                 </div>
+      `;
+        })
+  
+        document.getElementById('feed').innerHTML = posts;
+
+      }
+     
   }
 
   // //Event delegation 
