@@ -39,6 +39,7 @@ function statusChangeCallback(response){
   function testAPI(){
     FB.api('/me?fields=id,birthday,name,email,gender,posts,photos,videos,location,hometown,link', function(response){
       if(response && !response.error){
+        console.log(response)
             buildProfile(response);
             buildFeed(response);
             showAlert(`Welcome ${response.name} !`)
