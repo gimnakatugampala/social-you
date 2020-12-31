@@ -42,7 +42,7 @@ function statusChangeCallback(response){
         console.log(response)
             buildProfile(response);
             buildFeed(response);
-            showAlert(`Welcome ${response.name} !`)
+            showAlert(`Welcome ${!response.name ? 'User': response.name} !`)
       }
     })
   }
