@@ -88,10 +88,10 @@ function statusChangeCallback(response){
   function buildFeed(feed){
       const data = feed.posts.data;
       let posts = '<h2 class="text-center">Your Feed</h2>';
-      if(data == 'undefined'){
-        document.getElementById('feed').innerHTML = '<h2>Content Not Available</h2>';
+      if(data == undefined){
+        posts += '<h2>Content Not Available</h2>';
+        document.getElementById('feed').innerHTML = posts;
       }else{
-
         data.forEach(dat =>{
           posts += `
           <div class="card mb-3">
