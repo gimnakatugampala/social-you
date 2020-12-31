@@ -67,7 +67,7 @@ function statusChangeCallback(response){
       <div class="card mb-3">
       <h3 class="card-header">Your Account Info</h3>
       <ul class="list-group list-group-flush">
-          <li class="list-group-item"><i class="far fa-user-circle"></i> Name : ${user.name}</li>
+          <li class="list-group-item"><i class="far fa-user-circle"></i> Name : ${!user.name ? 'Name not Available': user.name}</li>
           <li class="list-group-item"><i class="far fa-envelope"> </i> Email : ${user.email}</li>
           <li class="list-group-item"><i class="fas fa-user-friends"> </i> Gender : ${user.gender === 'male' ? 'Male': 'Female'}</li>
           <li class="list-group-item"><i class="fas fa-birthday-cake"> </i> Birthday : ${user.birthday}</li>
@@ -98,14 +98,14 @@ function statusChangeCallback(response){
       document.getElementById('feed').innerHTML = posts;
   }
 
-  //Event delegation 
-  document.querySelector('body').addEventListener('click',function(e){
+  // //Event delegation 
+  // document.querySelector('body').addEventListener('click',function(e){
     
-    if(e.target.classList.contains('btn-danger')){
-        window.location.reload();
-    }
+  //   if(e.target.classList.contains('btn-danger')){
+  //       window.location.reload();
+  //   }
 
-  })
+  // })
 
   //Show alert
   function showAlert(message){
@@ -120,12 +120,12 @@ function statusChangeCallback(response){
       
   }
 //   //Log out all
-//   function logout(){
-//     // FB.logout(function(response){
-//     //     window.location.reload()
-//     // //   setElements(false);
+  function logout(){
+    FB.logout(function(response){
+        // window.location.reload()
+      setElements(false);
       
-//     // });
+    });
 
 
-//   }
+  }
