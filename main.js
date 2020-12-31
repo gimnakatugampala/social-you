@@ -1,3 +1,6 @@
+let users = [];
+let data = [];
+
 //JS SDK
 window.fbAsyncInit = function() {
     FB.init({
@@ -68,12 +71,14 @@ function statusChangeCallback(response){
       <div class="card mb-3">
       <h3 class="card-header">Your Account Info</h3>
       <ul class="list-group list-group-flush">
-          <li class="list-group-item"><i class="far fa-user-circle"></i> Name : ${!user.name ? 'Name not Available': user.name}</li>
-          <li class="list-group-item"><i class="far fa-envelope"> </i> Email : ${user.email}</li>
-          
+          <li class="list-group-item"><i class="far fa-user-circle"></i> Name : ${!user.name || '' ? 'Name not Available': user.name}</li>
+          <li class="list-group-item"><i class="far fa-envelope"> </i> Email : ${!user.email || '' ? 'N/A': user.email}</li>
+          <li class="list-group-item"><i class="fas fa-user-friends"> </i> Gender : ${!user.gender || '' ? 'N/A': user.gender}</li>
+          <li class="list-group-item"><i class="fas fa-birthday-cake"> </i> Birthday : ${!user.birthday || ''?'N/A': user.birthday}</li>
+          <li class="list-group-item"><i class="far fa-compass"> </i> Location : ${!user.location.name || ''? 'N/A' : user.location.name}</li>
         </ul>
         <div class="card-body">
-        <a href="${user.link}" class="card-link" target="_blank">Go to Your Profile</a>
+        <a href="${!user.link || ''? 'N/A': user.link}" class="card-link" target="_blank">Go to Your Profile</a>
       </div>
      </div>
       `;
